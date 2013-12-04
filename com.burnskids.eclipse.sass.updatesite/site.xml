@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/com.burnskids.eclipse.sass_1.0.0.qualifier.jar" id="com.burnskids.eclipse.sass" version="1.0.0.qualifier">
+      <category name="com.burnskids.eclipse.category"/>
+   </feature>
+   <category-def name="com.burnskids.eclipse.category" label="All Plugins"/>
+</site>
