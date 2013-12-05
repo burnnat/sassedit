@@ -3,7 +3,14 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Sass Editor
 Bundle-SymbolicName: com.burnskids.eclipse.sass.editor;singleton:=true
 Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.burnskids.sasseditor.SassPlugin
 Require-Bundle: org.eclipse.ui,
- org.eclipse.core.runtime
+ org.eclipse.core.runtime,
+ org.eclipse.dltk.core,
+ org.eclipse.dltk.ui,
+ org.eclipse.core.resources,
+ org.eclipse.ui.editors,
+ org.eclipse.jface.text,
+ org.eclipse.ui.navigator
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
