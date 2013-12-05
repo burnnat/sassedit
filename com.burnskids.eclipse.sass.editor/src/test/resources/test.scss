@@ -1,0 +1,22 @@
+@mixin foobar($test, $optional: true) {
+	$local: 20 !default;
+	$global: #ccc !important;
+	
+	.foo {
+		background: none;
+		
+		margin: {
+			left: 100px;
+			right: 30px;
+		}
+		
+		div input.test {
+			margin: $test;
+			color: blue;
+		}
+	}
+}
+
+@function baz() {
+	@return foo;
+}
