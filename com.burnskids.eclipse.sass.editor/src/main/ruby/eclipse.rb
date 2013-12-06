@@ -18,7 +18,7 @@ module Eclipse
 end
 
 def set_debug(debug)
-	Eclipse.debug = debug
+	Eclipse.set_debug(debug)
 end
 
 def parse(data)

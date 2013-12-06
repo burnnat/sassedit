@@ -59,6 +59,8 @@ public class SassScanner extends AbstractScriptScanner {
 			container.runScriptlet(PathType.CLASSPATH, "eclipse.rb"),
 			ISourceParser.class
 		);
+		
+		parser.setDebug(true);
 	}
 
 	@Override
@@ -67,8 +69,6 @@ public class SassScanner extends AbstractScriptScanner {
 		
 		tokens = new ArrayList<ISourceToken>();
 		nextIndex = 0;
-		
-		System.out.println("Document length: " + length);
 		
 		try {
 			tokens.addAll(parser.parse(document.get(offset, length)));
@@ -89,10 +89,13 @@ public class SassScanner extends AbstractScriptScanner {
 		try {
 			currentToken = tokens.get(nextIndex++);
 			
+			int offset = currentToken.getOffset();
+			int length = currentToken.getLength();
+			
 			System.out.println(
-				"(" + currentToken.getOffset() +
-				", " + currentToken.getLength() +
-				"): " + currentToken.getType()
+				"[" + currentToken.getType() + "] " +
+				"(" + offset + ", " + length + "): " +
+				document.get(offset, length)
 			);
 			
 			return this.getTokenForSource(currentToken);

@@ -131,12 +131,6 @@ public class NaiveDamagerRepairer implements IPresentationDamager, IPresentation
 				break;
 			}
 			
-			System.out.println(
-				"(" + scanner.getTokenOffset() +
-				", " + scanner.getTokenLength() +
-				")"
-			);
-			
 			addRange(
 				presentation,
 				scanner.getTokenOffset(),

@@ -3,5 +3,6 @@ package com.burnskids.eclipse.sass.editor.parser;
 import java.util.List;
 
 public interface ISourceParser {
-	List<ISourceToken> parse(String string);
+	public void setDebug(boolean debug);
+	public List<ISourceToken> parse(String string);
 }
