@@ -8,6 +8,8 @@ class Eclipse::Token
 	end
 end
 
+Eclipse.set_debug(true)
+
 parse($data).each do |x|
 	puts x
 end

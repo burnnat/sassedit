@@ -6,15 +6,16 @@ module Eclipse
 					ret = nil
 					
 					begin
-						Eclipse.log("Begin capture: #{name}")
+						Eclipse.log("+[#{@captures.size}] Begin capture: #{name}")
 						
 						tokens = start_capture
 						ret = self.class.superclass.instance_method(name).bind(self).call(*args)
 						
 						self.instance_exec(tokens, &block) unless ret.nil?
 					ensure
+						Eclipse.log("  --> REJECT") if ret.nil?
 						stop_capture
-						Eclipse.log("End capture: #{name}")
+						Eclipse.log("-[#{@captures.size}] End capture: #{name}")
 					end
 					
 					ret
@@ -58,7 +59,7 @@ module Eclipse
 				tok = super
 				
 				unless tok.nil? or rx == S
-					Eclipse.log("(#{pos}) #{tok}")
+					Eclipse.log("    (#{pos}) #{tok}")
 					@captures.last << Token.new(pos, tok.size, nil)
 				end
 				
@@ -86,6 +87,10 @@ module Eclipse
 				record(:directive, tokens[0..1])
 			end
 			
+			capture(:mixin_directive) do |tokens|
+				record(:mixin, tokens[0])
+			end
+			
 			capture(:block) do |tokens|
 				record(:structure, tokens[0])
 				record(:structure, tokens[-1])
@@ -93,6 +98,12 @@ module Eclipse
 			
 			capture(:block_contents) do |tokens|
 				tokens.each { |x| record(:structure, x) }
+			end
+			
+			capture(:block_child) do |tokens|
+				# Nothing here, to swallow children from being registered
+				# as "structure" tokens in the block contents. This can be
+				# removed once we have support for ruleset selectors.
 			end
 			
 			capture(:declaration) do |tokens|
@@ -103,7 +114,7 @@ module Eclipse
 			capture(:variable) do |tokens|
 				record(:variable, tokens[0..1])
 				record(:structure, tokens[2])
-				record(:guard, tokens[3])
+				record(:keyword, tokens[3])
 			end
 			
 			def value!
