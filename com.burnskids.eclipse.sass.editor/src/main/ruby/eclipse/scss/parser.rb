@@ -74,12 +74,15 @@ module Eclipse
 			end
 			
 			def sass_script(*args)
+				Eclipse.log("+[x] Begin capture: sass_script")
+				
 				ret = super
 				output = @line
 				
 				@tokens.push(*output[:tokens])
 				@line = output[:line]
-				
+
+				Eclipse.log("-[x] End capture: sass_script")
 				ret
 			end
 			

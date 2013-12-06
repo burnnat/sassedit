@@ -8,7 +8,7 @@ module Eclipse
 			def line
 				{
 					:line => @lexer.line,
-					:tokens => [] # @lexer.tokens
+					:tokens => @lexer.tokens
 				}
 			end
 		end
