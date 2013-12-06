@@ -11,7 +11,7 @@ import com.burnskids.eclipse.sass.editor.ui.SassTextTools;
 public class SassPlugin extends AbstractUIPlugin {
 
 	// The plug-in ID
-	public static final String PLUGIN_ID = "com.burnskids.eclipse.sass.editor";
+	public static final String PLUGIN_ID = "com.burnskids.eclipse.sass";
 
 	// The shared instance
 	private static SassPlugin plugin;

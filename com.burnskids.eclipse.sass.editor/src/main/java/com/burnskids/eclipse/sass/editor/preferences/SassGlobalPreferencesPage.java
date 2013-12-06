@@ -11,8 +11,8 @@ import com.burnskids.eclipse.sass.editor.SassPlugin;
 
 public class SassGlobalPreferencesPage extends AbstractConfigurationBlockPropertyAndPreferencePage {
 	
-	private static final String PROPERTY_PAGE_ID = "com.burnskids.sasseditor.propertyPage";
-	private static final String PREFERENCE_PAGE_ID = "com.burnskids.sasseditor.preferences";
+	private static final String PROPERTY_PAGE_ID = "com.burnskids.eclipse.sass.propertyPage";
+	private static final String PREFERENCE_PAGE_ID = "com.burnskids.eclipse.sass.preferences";
 	
 	@Override
 	protected AbstractOptionsBlock createOptionsBlock(

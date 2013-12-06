@@ -1,10 +1,13 @@
 require 'eclipse'
 
-filename = 'test.scss'
 $data = File.read('src/test/resources/test.scss')
 
-tokens = Eclipse::SCSS::Parser.new($data, filename).parse_tokens
+class Eclipse::Token
+	def to_s
+		"[#{type}] #{pos}: #{$data[pos .. pos + length - 1]}"
+	end
+end
 
-tokens.each do |x|
+parse($data).each do |x|
 	puts x
 end

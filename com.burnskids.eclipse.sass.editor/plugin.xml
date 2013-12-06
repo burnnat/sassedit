@@ -6,23 +6,23 @@
          point="org.eclipse.core.resources.natures">
       <runtime>
          <run
-               class="com.burnskids.sasseditor.core.SassNature">
+               class="com.burnskids.eclipse.sass.editor.core.SassNature">
          </run>
       </runtime>
    </extension>
    <extension
          point="org.eclipse.dltk.core.language">
       <language
-            class="com.burnskids.sasseditor.core.SassLanguageToolkit"
-            nature="com.burnskids.sasseditor.nature"
+            class="com.burnskids.eclipse.sass.editor.core.SassLanguageToolkit"
+            nature="com.burnskids.eclipse.sass.nature"
             priority="0">
       </language>
    </extension>
    <extension
          point="org.eclipse.dltk.ui.language">
       <language
-            class="com.burnskids.sasseditor.core.SassUILanguageToolkit"
-            nature="com.burnskids.sasseditor.nature"
+            class="com.burnskids.eclipse.sass.editor.core.SassUILanguageToolkit"
+            nature="com.burnskids.eclipse.sass.nature"
             priority="0">
       </language>
    </extension>
@@ -31,7 +31,7 @@
       <content-type
             base-type="org.eclipse.core.runtime.text"
             file-extensions="scss"
-            id="com.burnskids.sasseditor.content-type"
+            id="com.burnskids.eclipse.sass.content-type"
             name="SASS"
             priority="normal">
       </content-type>
@@ -40,39 +40,39 @@
    <extension
          point="org.eclipse.ui.editors">
       <editor
-            class="com.burnskids.sasseditor.editors.SassEditor"
+            class="com.burnskids.eclipse.sass.editor.ui.SassEditor"
             contributorClass="org.eclipse.dltk.internal.ui.editor.BasicScriptEditorActionContributor"
             default="true"
             icon="icons/colorized.png"
-            id="com.burnskids.sasseditor.editor"
+            id="com.burnskids.eclipse.sass.editor"
             name="Sass Editor">
          <contentTypeBinding
-               contentTypeId="com.burnskids.sasseditor.content-type">
+               contentTypeId="com.burnskids.eclipse.sass.content-type">
          </contentTypeBinding>
       </editor>
    </extension>
    <extension
          point="org.eclipse.core.runtime.preferences">
       <initializer
-            class="com.burnskids.sasseditor.preferences.SassPreferenceInitializer">
+            class="com.burnskids.eclipse.sass.editor.preferences.SassPreferenceInitializer">
       </initializer>
    </extension>
    <extension
          point="org.eclipse.ui.preferencePages">
       <page
-            class="com.burnskids.sasseditor.preferences.SassGlobalPreferencesPage"
-            id="com.burnskids.sasseditor.preferences"
+            class="com.burnskids.eclipse.sass.editor.preferences.SassGlobalPreferencesPage"
+            id="com.burnskids.eclipse.sass.preferences"
             name="SASS">
       </page>
       <page
-            category="com.burnskids.sasseditor.preferences"
-            class="com.burnskids.sasseditor.preferences.SassEditorPreferencesPage"
-            id="com.burnskids.sasseditor.preferences.editor"
+            category="com.burnskids.eclipse.sass.preferences"
+            class="com.burnskids.eclipse.sass.editor.preferences.SassEditorPreferencesPage"
+            id="com.burnskids.eclipse.sass.preferences.editor"
             name="Editor">
       </page>
       <page
-            category="com.burnskids.sasseditor.preferences.editor"
-            class="com.burnskids.sasseditor.preferences.SassEditorSyntaxColoringPreferencesPage"
+            category="com.burnskids.eclipse.sass.preferences.editor"
+            class="com.burnskids.eclipse.sass.editor.preferences.SassEditorSyntaxColoringPreferencesPage"
             id="org.deved.antlride.ui.preferences.editor.syntaxColoring"
             name="Syntax Coloring">
       </page>
@@ -82,7 +82,7 @@
       <commonFilter
             activeByDefault="true"
             description="Hides .sass-cache directories"
-            id="com.burnskids.sasseditor.filters.sasscache"
+            id="com.burnskids.eclipse.sass.filters.sasscache"
             name="SASS cache files">
          <filterExpression>
             <adapt
@@ -101,7 +101,7 @@
             viewerId="org.eclipse.ui.navigator.ProjectExplorer">
          <includes>
             <contentExtension
-                  pattern="com.burnskids.sasseditor.filters.sasscache">
+                  pattern="com.burnskids.eclipse.sass.filters.sasscache">
             </contentExtension>
          </includes>
       </viewerContentBinding>

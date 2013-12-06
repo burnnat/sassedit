@@ -3,21 +3,29 @@ module Eclipse
 		class Parser < Sass::SCSS::Parser
 			def self.capture(name, &block)
 				define_method(name) do |*args|
-					tokens = start_capture
-					ret = self.class.superclass.instance_method(name).bind(self).call(*args)
+					ret = nil
 					
-					self.instance_exec(tokens, &block) unless ret.nil?
+					begin
+						Eclipse.log("Begin capture: #{name}")
+						
+						tokens = start_capture
+						ret = self.class.superclass.instance_method(name).bind(self).call(*args)
+						
+						self.instance_exec(tokens, &block) unless ret.nil?
+					ensure
+						stop_capture
+						Eclipse.log("End capture: #{name}")
+					end
 					
-					stop_capture
 					ret
 				end
 			end
 			
-			def parse_tokens
+			def parse
 				@captures = []
 				@tokens = []
 				
-				parse
+				super
 				
 				@tokens.sort!
 			end
@@ -37,6 +45,7 @@ module Eclipse
 			def start_capture
 				capture = []
 				@captures << capture
+				
 				capture
 			end
 			
@@ -49,6 +58,7 @@ module Eclipse
 				tok = super
 				
 				unless tok.nil? or rx == S
+					Eclipse.log("(#{pos}) #{tok}")
 					@captures.last << Token.new(pos, tok.size, nil)
 				end
 				

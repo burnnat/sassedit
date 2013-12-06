@@ -13,7 +13,6 @@ import org.eclipse.jface.text.presentation.IPresentationRepairer;
 import org.eclipse.jface.text.rules.DefaultDamagerRepairer;
 import org.eclipse.jface.text.rules.IToken;
 import org.eclipse.jface.text.rules.ITokenScanner;
-import org.eclipse.jface.text.rules.Token;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StyleRange;
 
@@ -123,32 +122,28 @@ public class NaiveDamagerRepairer implements IPresentationDamager, IPresentation
 	 * @see IPresentationRepairer#createPresentation(TextPresentation, ITypedRegion)
 	 */
 	public void createPresentation(TextPresentation presentation, ITypedRegion region) {
-		int lastStart = region.getOffset();
-		int length = 0;
-		boolean firstToken = true;
-		IToken lastToken = Token.UNDEFINED;
-		TextAttribute lastAttribute = getTokenTextAttribute(lastToken);
-
-		scanner.setRange(document, lastStart, region.getLength());
+		scanner.setRange(document, region.getOffset(), region.getLength());
 
 		while (true) {
 			IToken token = scanner.nextToken();
+			
 			if (token.isEOF()) {
 				break;
 			}
-
-			TextAttribute attribute = getTokenTextAttribute(token);
 			
-			if (!firstToken)
-				addRange(presentation, lastStart, length, lastAttribute);
-			firstToken = false;
-			lastToken = token;
-			lastAttribute = attribute;
-			lastStart = scanner.getTokenOffset();
-			length = scanner.getTokenLength();
+			System.out.println(
+				"(" + scanner.getTokenOffset() +
+				", " + scanner.getTokenLength() +
+				")"
+			);
+			
+			addRange(
+				presentation,
+				scanner.getTokenOffset(),
+				scanner.getTokenLength(),
+				getTokenTextAttribute(token)
+			);
 		}
-
-		addRange(presentation, lastStart, length, lastAttribute);
 	}
 
 	/**

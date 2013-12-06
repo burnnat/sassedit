@@ -10,7 +10,7 @@ import com.burnskids.eclipse.sass.editor.core.SassLanguageToolkit;
 
 public class SassEditor extends ScriptEditor {
 	
-	public static final String EDITOR_ID = "com.burnskids.sasseditor.editors.SassEditor";
+	public static final String EDITOR_ID = "com.burnskids.sass.editor";
 	public static final String EDITOR_CONTEXT = "#SassEditorContext";
 	
 	@Override
