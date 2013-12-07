@@ -1,6 +1,7 @@
 require 'sass'
 
 require 'eclipse/token'
+require 'eclipse/script/const'
 require 'eclipse/script/lexer'
 require 'eclipse/script/parser'
 require 'eclipse/scss/parser'

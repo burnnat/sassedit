@@ -1,9 +1,3 @@
-require 'sass'
-
-require_relative 'script/lexer'
-require_relative 'script/parser'
-require_relative 'scss/parser'
-
 module Eclipse
 	class Token
 		attr_reader :type

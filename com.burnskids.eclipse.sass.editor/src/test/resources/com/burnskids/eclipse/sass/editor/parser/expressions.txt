@@ -1,0 +1,24 @@
+variable	$exp
+structure	:
+number		2
+operator	*
+structure	(
+variable	$base
+operator	+
+number		10px
+operator	-
+number		40em
+structure	)
+operator	/
+number		95zingbat
+structure	;
+
+variable	$exp
+structure	:
+boolean		true
+operator	and
+variable	$maybe
+operator	or
+operator	not
+variable	$never
+structure	;

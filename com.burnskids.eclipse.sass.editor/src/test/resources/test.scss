@@ -1,6 +1,7 @@
+$global: #ccc !important;
+
 @mixin foobar($test, $optional: true) {
 	$local: 20 !default;
-	$global: #ccc !important;
 	
 	.foo {
 		background: none;

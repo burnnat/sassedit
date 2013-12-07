@@ -1,0 +1,18 @@
+variable	$bar
+structure	:
+number		20px
+structure	;
+
+variable	$baz
+structure	:
+color		#00f5e9
+keyword		!default
+structure	;
+
+variable	$bazinga
+structure	:
+number		1px
+string		solid
+color		black
+keyword		!important
+structure	;
