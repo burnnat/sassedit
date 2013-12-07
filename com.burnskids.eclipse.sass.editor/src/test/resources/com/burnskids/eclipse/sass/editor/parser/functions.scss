@@ -1,0 +1,9 @@
+@function noParams() {
+	@return false;
+}
+
+@function singleParam($lonely) {
+	@return true
+}
+
+@function withDefaults($first, $second, $final: null) {}

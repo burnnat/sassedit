@@ -20,6 +20,14 @@ module Eclipse
 				
 				if type == :ident and COLORS.include?(ret.value)
 					type = :color
+				elsif type == :funcall
+					# Function name
+					@tokens << Token.new(pos, size - 1, :function)
+					
+					# Opening parenthesis
+					pos = pos + size - 1
+					size = 1
+					type = :structure
 				else
 					type = TYPES[type] || type
 				end

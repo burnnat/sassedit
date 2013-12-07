@@ -93,6 +93,11 @@ public class ParserTest {
 	}
 
 	@Test
+	public void testFunctions() throws IOException {
+		testTokens("functions");
+	}
+
+	@Test
 	public void testVariables() throws IOException {
 		testTokens("variables");
 	}

@@ -94,6 +94,10 @@ module Eclipse
 				record(:mixin, tokens[0])
 			end
 			
+			capture(:function_directive) do |tokens|
+				record(:function, tokens[0])
+			end
+			
 			capture(:block) do |tokens|
 				record(:structure, tokens[0])
 				record(:structure, tokens[-1])

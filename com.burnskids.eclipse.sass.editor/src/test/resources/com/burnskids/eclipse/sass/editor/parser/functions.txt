@@ -1,0 +1,33 @@
+directive	@function
+function	noParams
+structure	(
+structure	)
+structure	{
+directive	@return
+boolean		false
+structure	;
+structure	}
+
+directive	@function
+function	singleParam
+structure	(
+variable	$lonely
+structure	)
+structure	{
+directive	@return
+boolean		true
+structure	}
+
+directive	@function
+function	withDefaults
+structure	(
+variable	$first
+structure	,
+variable	$second
+structure	,
+variable	$final
+structure	:
+null		null
+structure	)
+structure	{
+structure	}

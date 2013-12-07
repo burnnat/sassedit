@@ -22,3 +22,15 @@ operator	or
 operator	not
 variable	$never
 structure	;
+
+variable	$exp
+structure	:
+function	func
+structure	(
+string		'string'
+structure	,
+color		#1fc
+structure	,
+number		24%
+structure	)
+structure	;

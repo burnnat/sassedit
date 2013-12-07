@@ -1,4 +1,4 @@
-$global: #ccc !important;
+$global: lighten(#ccc, 20%) !important;
 
 @mixin foobar($test, $optional: true) {
 	$local: 20 !default;
