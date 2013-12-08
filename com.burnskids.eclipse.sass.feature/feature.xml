@@ -213,8 +213,28 @@ after the cause of action arose. Each party waives its rights to a jury trial in
 any resulting litigation.
    </license>
 
+   <requires>
+      <import plugin="org.jruby.jruby" version="1.7.8" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.dltk.core"/>
+      <import plugin="org.eclipse.dltk.ui"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.eclipse.jface.text"/>
+      <import plugin="org.eclipse.ui.navigator"/>
+      <import plugin="org.eclipse.osgi"/>
+   </requires>
+
    <plugin
          id="com.burnskids.eclipse.sass.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.jruby.jruby"
          download-size="0"
          install-size="0"
          version="0.0.0"

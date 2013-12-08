@@ -57,6 +57,25 @@
 				<artifactId>tycho-maven-plugin</artifactId>
 				<version>${tycho-version}</version>
 				<extensions>true</extensions>
+				<configuration>
+					<environments>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86</arch>
+						</environment>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>macosx</os>
+							<ws>cocoa</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -66,8 +85,24 @@
 	</properties>
 
 	<modules>
+		<!--
+			Don't compile JRuby by default, as it takes a long time to do so.
+			If you do want to build with JRuby, use `mvn -P full install`.
+		-->
 		<module>com.burnskids.eclipse.sass.editor</module>
 		<module>com.burnskids.eclipse.sass.editor.test</module>
 		<module>com.burnskids.eclipse.sass.feature</module>
 	</modules>
+
+	<profiles>
+		<profile>
+			<id>full</id>
+			<modules>
+				<module>org.jruby.jruby</module>
+				<module>com.burnskids.eclipse.sass.editor</module>
+				<module>com.burnskids.eclipse.sass.editor.test</module>
+				<module>com.burnskids.eclipse.sass.feature</module>
+			</modules>
+		</profile>
+	</profiles>
 </project>
