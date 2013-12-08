@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <buildpath>
-	<buildpathentry kind="src" path="src/main/ruby"/>
-	<buildpathentry kind="con" path="org.eclipse.dltk.USER_LIBRARY/Sass"/>
+	<buildpathentry kind="src" path="src/ruby"/>
+	<buildpathentry kind="src" path="lib/sass/lib"/>
 </buildpath>
