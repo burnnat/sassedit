@@ -1,3 +1,4 @@
 language: java
 install: true
 script: mvn -e install -P full
+after_failure: cat *.test/target/surefire-reports/*.txt
