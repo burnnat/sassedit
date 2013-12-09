@@ -214,7 +214,6 @@ any resulting litigation.
    </license>
 
    <requires>
-      <import plugin="org.jruby.jruby" version="1.7.8" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.dltk.core"/>
@@ -223,7 +222,7 @@ any resulting litigation.
       <import plugin="org.eclipse.ui.editors"/>
       <import plugin="org.eclipse.jface.text"/>
       <import plugin="org.eclipse.ui.navigator"/>
-      <import plugin="org.eclipse.osgi"/>
+      <import plugin="com.burnskids.eclipse.sass.parser" version="0.0.1" match="greaterOrEqual"/>
    </requires>
 
    <plugin
@@ -235,6 +234,13 @@ any resulting litigation.
 
    <plugin
          id="org.jruby.jruby"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.burnskids.eclipse.sass.parser"
          download-size="0"
          install-size="0"
          version="0.0.0"
