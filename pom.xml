@@ -90,8 +90,8 @@
 			If you do want to build with JRuby, use `mvn -P full install`.
 		-->
 		<module>com.burnskids.eclipse.sass.parser</module>
+		<module>com.burnskids.eclipse.sass.parser.test</module>
 		<module>com.burnskids.eclipse.sass.editor</module>
-		<module>com.burnskids.eclipse.sass.editor.test</module>
 		<module>com.burnskids.eclipse.sass.feature</module>
 	</modules>
 
@@ -101,8 +101,8 @@
 			<modules>
 				<module>org.jruby.jruby</module>
 				<module>com.burnskids.eclipse.sass.parser</module>
+				<module>com.burnskids.eclipse.sass.parser.test</module>
 				<module>com.burnskids.eclipse.sass.editor</module>
-				<module>com.burnskids.eclipse.sass.editor.test</module>
 				<module>com.burnskids.eclipse.sass.feature</module>
 			</modules>
 		</profile>
