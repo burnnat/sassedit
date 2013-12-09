@@ -5,7 +5,7 @@ module Eclipse
 		attr_reader :length
 		
 		if RUBY_PLATFORM == "java"
-			include Java::com.burnskids.eclipse.sass.editor.parser.ISourceToken
+			include Java::com.burnskids.eclipse.sass.parser.ISourceToken
 			
 			# Java getter aliases
 			alias :getType :type

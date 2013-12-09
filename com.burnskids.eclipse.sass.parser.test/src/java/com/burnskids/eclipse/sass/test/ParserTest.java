@@ -8,14 +8,12 @@ import java.util.List;
 import java.util.Scanner;
 
 import org.apache.commons.io.IOUtils;
-import org.jruby.embed.osgi.OSGiScriptingContainer;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.osgi.framework.Bundle;
 
-import com.burnskids.eclipse.sass.editor.SassPlugin;
-import com.burnskids.eclipse.sass.editor.parser.ISourceParser;
-import com.burnskids.eclipse.sass.editor.parser.ISourceToken;
+import com.burnskids.eclipse.sass.parser.ISourceParser;
+import com.burnskids.eclipse.sass.parser.ISourceToken;
+import com.burnskids.eclipse.sass.parser.SassParserPlugin;
 
 public class ParserTest {
 
@@ -26,14 +24,7 @@ public class ParserTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		Bundle bundle = SassPlugin.getDefault().getBundle();
-		
-		OSGiScriptingContainer container = new OSGiScriptingContainer(bundle);
-		parser = container.getInstance(
-			container.runScriptlet(bundle, "src/ruby/eclipse.rb"),
-			ISourceParser.class
-		);
-		
+		parser = SassParserPlugin.getDefault().getParser();
 		parser.setDebug(true);
 	}
 

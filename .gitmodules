@@ -1,3 +1,6 @@
 [submodule "com.burnskids.eclipse.sass.editor/lib/sass"]
 	path = com.burnskids.eclipse.sass.editor/lib/sass
 	url = https://github.com/nex3/sass.git
+[submodule "com.burnskids.eclipse.sass.parser\\lib\\sass"]
+	path = com.burnskids.eclipse.sass.parser\\lib\\sass
+	url = https://github.com/nex3/sass.git

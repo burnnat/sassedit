@@ -13,11 +13,11 @@ import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.rules.IRule;
 import org.eclipse.jface.text.rules.IToken;
 import org.eclipse.jface.text.rules.Token;
-import org.jruby.embed.osgi.OSGiScriptingContainer;
-import org.osgi.framework.Bundle;
 
-import com.burnskids.eclipse.sass.editor.SassPlugin;
 import com.burnskids.eclipse.sass.editor.ui.ISassColorConstants;
+import com.burnskids.eclipse.sass.parser.ISourceParser;
+import com.burnskids.eclipse.sass.parser.ISourceToken;
+import com.burnskids.eclipse.sass.parser.SassParserPlugin;
 
 public class SassScanner extends AbstractScriptScanner {
 	
@@ -55,13 +55,7 @@ public class SassScanner extends AbstractScriptScanner {
 		super(manager, store);
 		this.initialize();
 		
-		Bundle bundle = SassPlugin.getDefault().getBundle();
-		
-		OSGiScriptingContainer container = new OSGiScriptingContainer(bundle);
-		parser = container.getInstance(
-			container.runScriptlet(bundle, "src/ruby/eclipse.rb"),
-			ISourceParser.class
-		);
+		parser = SassParserPlugin.getDefault().getParser();
 	}
 
 	@Override

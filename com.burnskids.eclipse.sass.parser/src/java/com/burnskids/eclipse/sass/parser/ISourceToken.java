@@ -1,4 +1,4 @@
-package com.burnskids.eclipse.sass.editor.parser;
+package com.burnskids.eclipse.sass.parser;
 
 public interface ISourceToken {
 

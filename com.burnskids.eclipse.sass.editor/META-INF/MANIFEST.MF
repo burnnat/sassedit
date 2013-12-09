@@ -4,18 +4,15 @@ Bundle-Name: Sass Editor
 Bundle-SymbolicName: com.burnskids.eclipse.sass.editor;singleton:=true
 Bundle-Version: 0.0.1.qualifier
 Bundle-Activator: com.burnskids.eclipse.sass.editor.SassPlugin
-Require-Bundle: org.jruby.jruby;bundle-version="1.7.8",
- org.eclipse.ui,
+Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.dltk.core,
  org.eclipse.dltk.ui,
  org.eclipse.core.resources,
  org.eclipse.ui.editors,
  org.eclipse.jface.text,
- org.eclipse.ui.navigator
+ org.eclipse.ui.navigator,
+ com.burnskids.eclipse.sass.parser;bundle-version="0.0.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
-Export-Package: com.burnskids.eclipse.sass.editor.parser
-Bundle-ClassPath: .,
- src/ruby/,
- lib/sass/lib/
+Bundle-ClassPath: .

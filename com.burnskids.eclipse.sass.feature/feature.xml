@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="com.burnskids.eclipse.sass"
+      id="com.burnskids.eclipse.sass.feature"
       label="Sass Editor"
       version="0.0.1.qualifier">
 
