@@ -1,3 +1,3 @@
 language: java
-install:
+before_script:
 script: mvn install -P full
