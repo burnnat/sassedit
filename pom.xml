@@ -93,6 +93,7 @@
 		<module>com.burnskids.eclipse.sass.parser.test</module>
 		<module>com.burnskids.eclipse.sass.editor</module>
 		<module>com.burnskids.eclipse.sass.feature</module>
+		<module>com.burnskids.eclipse.sass.p2</module>
 	</modules>
 
 	<profiles>
@@ -104,6 +105,7 @@
 				<module>com.burnskids.eclipse.sass.parser.test</module>
 				<module>com.burnskids.eclipse.sass.editor</module>
 				<module>com.burnskids.eclipse.sass.feature</module>
+				<module>com.burnskids.eclipse.sass.p2</module>
 			</modules>
 		</profile>
 	</profiles>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/com.burnskids.eclipse.sass.feature_0.0.1.qualifier.jar" id="com.burnskids.eclipse.sass.feature" version="0.0.1.qualifier">
+      <category name="all"/>
+   </feature>
+   <category-def name="all" label="All"/>
+</site>
