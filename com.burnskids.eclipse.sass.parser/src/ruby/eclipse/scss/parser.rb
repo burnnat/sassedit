@@ -142,7 +142,7 @@ module Eclipse
 			end
 			
 			capture(:media_query) do |tokens|
-				tokens.each { |x|
+				tokens.each do |x|
 					record(
 						if /^and$/i =~ x.value 
 						then
@@ -152,7 +152,7 @@ module Eclipse
 						end,
 						x
 					)
-				}
+				end
 			end
 			
 			capture(:media_expr) do |tokens|
@@ -195,6 +195,20 @@ module Eclipse
 				record(:variable, tokens[0..1])
 				record(:structure, tokens[2])
 				record(:keyword, tokens[3])
+			end
+			
+			capture(:ss_comments) do |tokens|
+				tokens.each do |x|
+					record(
+						if /^\/\// =~ x.value 
+						then
+							:comment_line
+						else
+							:comment_block
+						end,
+						x
+					)
+				end
 			end
 			
 			def value!
