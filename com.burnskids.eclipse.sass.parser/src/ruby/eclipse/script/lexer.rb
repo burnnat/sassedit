@@ -11,10 +11,18 @@ module Eclipse
 			def next
 				ret = super
 				
+				type = ret.type
 				size = @scanner.matched_size
 				final = @scanner.pos
+				
+				if type == :string && @scanner[2] == '#{'
+					# The SassScript lexer automatically adjusts position back
+					# to avoid consuming interpolation start tokens, so we just
+					# need to adjust the size here to match.
+					size -= 2
+				end
+				
 				pos = final - size
-				type = ret.type
 				
 				Eclipse.log("    (#{pos} :: #{type}) #{@scanner.string[pos..final-1]}")
 				

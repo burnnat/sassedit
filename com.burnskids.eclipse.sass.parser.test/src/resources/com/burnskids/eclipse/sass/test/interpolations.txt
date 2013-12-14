@@ -1,0 +1,73 @@
+directive		@import
+function		url
+structure		(
+string			"http://fonts.googleapis.com/css?family=
+interpolation	#{
+variable		$family
+interpolation	}
+string			"
+structure		)
+structure		;
+
+directive		@media
+interpolation	#{
+variable		$media
+interpolation	}
+operator		and
+structure		(
+variable		$feature
+structure		:
+variable		$value
+structure		)
+structure		{
+structure		}
+
+selector		p.
+interpolation	#{
+variable		$name
+interpolation	}
+structure		{
+
+interpolation	#{
+variable		$attr
+interpolation	}
+property		-color
+structure		:
+color			blue
+structure		;
+
+property		content
+structure		:
+string			"I ate 
+interpolation	#{
+variable		$value
+operator		+
+string			"nested 
+interpolation	#{
+number			10
+operator		+
+number			40
+interpolation	}
+string			"
+interpolation	}
+string			 pies!"
+structure		;
+
+property		font
+structure		:
+interpolation	#{
+variable		$font-size
+interpolation	}
+operator		/
+interpolation	#{
+variable		$line-height
+interpolation	}
+structure		;
+
+interpolation	#{
+string			"bare"
+interpolation	}
+structure		{
+structure		}
+
+structure		}

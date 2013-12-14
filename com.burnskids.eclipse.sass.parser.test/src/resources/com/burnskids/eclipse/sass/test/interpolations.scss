@@ -1,0 +1,11 @@
+@import url("http://fonts.googleapis.com/css?family=#{$family}");
+
+@media #{$media} and ($feature: $value) { }
+
+p.#{$name} {
+	#{$attr}-color: blue;
+	content: "I ate #{ $value + "nested #{ 10 + 40 }" } pies!";
+	font: #{$font-size}/#{$line-height};
+	
+	#{"bare"} { }
+}

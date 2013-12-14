@@ -47,9 +47,14 @@ public class ParserTest {
 			while (expected.hasNext()) {
 				ISourceToken token = tokens.get(i);
 				
-				assertEquals(expected.next(), token.getType());
+				assertEquals(
+					"Token type for token " + i,
+					expected.next(),
+					token.getType()
+				);
 				
 				assertEquals(
+					"Token value for token " + i,
 					expected.next(),
 					sass.substring(token.getOffset(), token.getOffset() + token.getLength())
 				);
@@ -80,6 +85,11 @@ public class ParserTest {
 	@Test
 	public void testFunctions() throws IOException {
 		testTokens("functions");
+	}
+
+	@Test
+	public void testInterpolations() throws IOException {
+		testTokens("interpolations");
 	}
 
 	@Test

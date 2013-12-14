@@ -8,13 +8,13 @@ module Eclipse
 					begin
 						Eclipse.log("+[#{@captures.size}] Begin capture: #{name}")
 						
-						tokens = start_capture
+						capture = start_capture
 						ret = self.class.superclass.instance_method(name).bind(self).call(*args)
 						
-						self.instance_exec(tokens, &block) unless ret.nil?
+						self.instance_exec(capture.input, &block) unless ret.nil?
 					ensure
 						Eclipse.log("  --> REJECT") if ret.nil?
-						stop_capture
+						stop_capture(ret.nil?)
 						Eclipse.log("-[#{@captures.size}] End capture: #{name}")
 					end
 					
@@ -23,12 +23,12 @@ module Eclipse
 			end
 			
 			def parse
-				@captures = []
-				@tokens = []
+				capture = Capture.new
+				@captures = [capture]
 				
 				super
 				
-				@tokens.sort!
+				capture.output.sort!
 			end
 			
 			def record(type, pieces)
@@ -40,18 +40,19 @@ module Eclipse
 				front = pieces.map { |x| x.pos }.min
 				back = pieces.map { |x| x.pos + x.length }.max
 				
-				@tokens << Token.new(front, back - front, type)
+				@captures.last << Token.new(front, back - front, type)
 			end
 			
 			def start_capture
-				capture = []
+				capture = Capture.new
 				@captures << capture
 				
 				capture
 			end
 			
-			def stop_capture
-				@captures.pop
+			def stop_capture(discard)
+				complete = @captures.pop
+				@captures.last.merge(complete) unless discard
 			end
 			
 			def tok(rx, last_group_lookahead = false)
@@ -87,7 +88,10 @@ module Eclipse
 				ret = super
 				output = @line
 				
-				@tokens.push(*output[:tokens])
+				output[:tokens].each do |x|
+					@captures.last << x
+				end
+				
 				@line = output[:line]
 				
 				Eclipse.log("-[x] End capture: sass_script")
@@ -127,6 +131,10 @@ module Eclipse
 			
 			capture(:include_directive) do |tokens|
 				record(:mixin, tokens)
+			end
+			
+			capture(:interpolation) do |tokens|
+				record(:interpolation, tokens)
 			end
 			
 			capture(:media_query_list) do |tokens|
