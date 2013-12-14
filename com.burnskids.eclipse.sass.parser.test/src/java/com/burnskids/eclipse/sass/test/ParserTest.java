@@ -88,6 +88,11 @@ public class ParserTest {
 	}
 
 	@Test
+	public void testMixins() throws IOException {
+		testTokens("mixins");
+	}
+
+	@Test
 	public void testSelectors() throws IOException {
 		testTokens("selectors");
 	}

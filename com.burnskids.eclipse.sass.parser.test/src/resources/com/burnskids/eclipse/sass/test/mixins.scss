@@ -1,0 +1,16 @@
+@mixin large-text { }
+@include large-text;
+
+@mixin clearfix() { }
+@include clearfix();
+
+@mixin sexy-border($color, $width) { }
+@include sexy-border(blue, 1in);
+
+@mixin sexy-border($color, $width: 1in) { }
+@include sexy-border($color: blue, $width: 2in);
+
+@mixin box-shadow($shadows...) { }
+@include box-shadow($values...);
+
+@include colors { color: $color; }

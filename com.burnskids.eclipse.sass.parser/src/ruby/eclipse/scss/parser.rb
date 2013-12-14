@@ -125,6 +125,10 @@ module Eclipse
 				record(:string, tokens)
 			end
 			
+			capture(:include_directive) do |tokens|
+				record(:mixin, tokens)
+			end
+			
 			capture(:media_query_list) do |tokens|
 				tokens.each { |x| record(:structure, x) }
 			end

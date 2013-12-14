@@ -1,0 +1,91 @@
+directive	@mixin
+mixin		large-text
+structure	{
+structure	}
+
+directive	@include
+mixin		large-text
+structure	;
+
+directive	@mixin
+mixin		clearfix
+structure	(
+structure	)
+structure	{
+structure	}
+
+directive	@include
+mixin		clearfix
+structure	(
+structure	)
+structure	;
+
+directive	@mixin
+mixin		sexy-border
+structure	(
+variable	$color
+structure	,
+variable	$width
+structure	)
+structure	{
+structure	}
+
+directive	@include
+mixin		sexy-border
+structure	(
+color		blue
+structure	,
+number		1in
+structure	)
+structure	;
+
+directive	@mixin
+mixin		sexy-border
+structure	(
+variable	$color
+structure	,
+variable	$width
+structure	:
+number		1in
+structure	)
+structure	{
+structure	}
+
+directive	@include
+mixin		sexy-border
+structure	(
+variable	$color
+structure	:
+color		blue
+structure	,
+variable	$width
+structure	:
+number		2in
+structure	)
+structure	;
+
+directive	@mixin
+mixin		box-shadow
+structure	(
+variable	$shadows
+structure	...
+structure	)
+structure	{
+structure	}
+
+directive	@include
+mixin		box-shadow
+structure	(
+variable	$values
+structure	...
+structure	)
+structure	;
+
+directive	@include
+mixin		colors
+structure	{
+property	color
+structure	:
+variable	$color
+structure	;
+structure	}
