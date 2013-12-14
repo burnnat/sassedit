@@ -1,0 +1,68 @@
+directive	@if
+boolean		true
+structure	{
+structure	}
+
+directive	@if
+number		5
+operator	!=
+number		3
+structure	{
+structure	}
+directive	@else
+structure	{
+structure	}
+
+directive	@if
+variable	$type
+operator	==
+string		first
+structure	{
+structure	}
+directive	@else if
+variable	$type
+operator	==
+string		second
+structure	{
+structure	}
+directive	@else
+structure	{
+structure	}
+
+directive	@for
+variable	$i
+directive	from
+number		1
+directive	through
+number		3
+structure	{
+structure	}
+
+directive	@for
+variable	$j
+directive	from
+number		-1
+directive	to
+number		1
+structure	{
+structure	}
+
+directive	@each
+variable	$animal
+directive	in
+string		puma
+structure	,
+string		sea-slug
+structure	,
+string		egret
+structure	,
+string		salamander
+structure	{
+structure	}
+
+directive	@while
+variable	$count
+operator	<
+number		100
+structure	{
+structure	}

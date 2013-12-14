@@ -89,13 +89,28 @@ module Eclipse
 				
 				@tokens.push(*output[:tokens])
 				@line = output[:line]
-
+				
 				Eclipse.log("-[x] End capture: sass_script")
 				ret
 			end
 			
 			capture(:directive) do |tokens|
 				record(:directive, tokens[0..1])
+			end
+			
+			capture(:else_block) do |tokens|
+				record(:directive, tokens)
+			end
+			
+			capture(:each_directive) do |tokens|
+				record(:variable, tokens[0..1])
+				record(:directive, tokens[2])
+			end
+			
+			capture(:for_directive) do |tokens|
+				record(:variable, tokens[0..1])
+				record(:directive, tokens[2])
+				record(:directive, tokens[3])
 			end
 			
 			capture(:mixin_directive) do |tokens|

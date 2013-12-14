@@ -63,6 +63,11 @@ public class ParserTest {
 	}
 
 	@Test
+	public void testControls() throws IOException {
+		testTokens("controls");
+	}
+
+	@Test
 	public void testExpressions() throws IOException {
 		testTokens("expressions");
 	}

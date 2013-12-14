@@ -1,0 +1,22 @@
+@if true { }
+
+@if 5 != 3 { }
+@else { }
+
+@if $type == first {
+
+}
+@else if $type == second {
+
+}
+@else {
+
+}
+
+@for $i from 1 through 3 { }
+
+@for $j from -1 to 1 { }
+
+@each $animal in puma, sea-slug, egret, salamander { }
+
+@while $count < 100 { }
