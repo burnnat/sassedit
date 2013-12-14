@@ -1,0 +1,72 @@
+directive	@import
+string		'foo.css'
+structure	;
+
+directive	@import
+string		"foo"
+string		screen
+structure	;
+
+directive	@import
+string		url(foo)
+structure	;
+
+directive	@import
+string		"rounded-corners"
+structure	,
+string		"text-shadow"
+structure	,
+string		"magic"
+structure	;
+
+selector	.nested
+structure	{
+directive	@import
+string		"example"
+structure	;
+structure	}
+
+directive	@media
+string		screen
+operator	and
+structure	(
+string		orientation
+structure	:
+string		landscape
+structure	)
+structure	{
+property	width
+structure	:
+number		500px
+structure	;
+structure	}
+
+directive	@media
+string		screen
+structure	{
+selector	.sidebar
+structure	{
+directive	@media
+structure	(
+string		orientation
+structure	:
+string		landscape
+structure	)
+structure	{
+structure	}
+structure	}
+structure	}
+
+selector	.seriousError
+structure	{
+directive	@extend
+selector	.error
+structure	;
+directive	@extend
+selector	%hidden
+structure	;
+directive	@extend
+selector	a
+keyword		!optional
+structure	;
+structure	}

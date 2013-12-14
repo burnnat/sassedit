@@ -68,6 +68,11 @@ public class ParserTest {
 	}
 
 	@Test
+	public void testCssDirectives() throws IOException {
+		testTokens("css-directives");
+	}
+
+	@Test
 	public void testExpressions() throws IOException {
 		testTokens("expressions");
 	}
@@ -75,6 +80,11 @@ public class ParserTest {
 	@Test
 	public void testFunctions() throws IOException {
 		testTokens("functions");
+	}
+
+	@Test
+	public void testLogDirectives() throws IOException {
+		testTokens("log-directives");
 	}
 
 	@Test

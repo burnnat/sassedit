@@ -32,7 +32,7 @@ module Eclipse
 			end
 			
 			def record(type, pieces)
-				return if pieces.nil?
+				return if pieces.nil? || (pieces.respond_to?(:empty?) && pieces.empty?)
 				
 				# coerce to an array
 				pieces = [pieces].flatten
@@ -68,7 +68,7 @@ module Eclipse
 					size = tok.size
 					
 					Eclipse.log("    (#{pos}) #{tok}")
-					@captures.last << Token.new(pos, size, nil)
+					@captures.last << Token.new(pos, size, nil, tok)
 				end
 				
 				tok
@@ -107,10 +107,44 @@ module Eclipse
 				record(:directive, tokens[2])
 			end
 			
+			capture(:extend_directive) do |tokens|
+				record(:keyword, tokens)
+			end
+			
 			capture(:for_directive) do |tokens|
 				record(:variable, tokens[0..1])
 				record(:directive, tokens[2])
 				record(:directive, tokens[3])
+			end
+			
+			capture(:import_directive) do |tokens|
+				tokens.each { |x| record(:structure, x) }
+			end
+			
+			capture(:import_arg) do |tokens|
+				record(:string, tokens)
+			end
+			
+			capture(:media_query_list) do |tokens|
+				tokens.each { |x| record(:structure, x) }
+			end
+			
+			capture(:media_query) do |tokens|
+				tokens.each { |x|
+					record(
+						if /^and$/i =~ x.value 
+						then
+							:operator
+						else
+							:string
+						end,
+						x
+					)
+				}
+			end
+			
+			capture(:media_expr) do |tokens|
+				tokens.each { |x| record(:structure, x) }
 			end
 			
 			capture(:mixin_directive) do |tokens|

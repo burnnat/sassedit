@@ -3,6 +3,7 @@ module Eclipse
 		attr_reader :type
 		attr_reader :pos
 		attr_reader :length
+		attr_reader :value
 		
 		if RUBY_PLATFORM == "java"
 			include Java::com.burnskids.eclipse.sass.parser.ISourceToken
@@ -13,10 +14,11 @@ module Eclipse
 			alias :getLength :length
 		end
 		
-		def initialize(pos, length, type)
+		def initialize(pos, length, type, value = nil)
 			@pos = pos
 			@length = length
 			@type = type
+			@value = value
 		end
 		
 		def to_s

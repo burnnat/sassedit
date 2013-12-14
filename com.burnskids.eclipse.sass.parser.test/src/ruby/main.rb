@@ -1,6 +1,6 @@
 require 'eclipse'
 
-$data = File.read('src/resources/test.scss')
+$data = File.read(ARGV[0])
 
 class Eclipse::Token
 	def to_s

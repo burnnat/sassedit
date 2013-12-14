@@ -30,6 +30,7 @@ require 'sass/tree/charset_node'
 require 'sass/selector'
 require 'sass/script'
 require 'sass/scss'
+require 'sass/media'
 
 require 'eclipse/token'
 require 'eclipse/script/const'

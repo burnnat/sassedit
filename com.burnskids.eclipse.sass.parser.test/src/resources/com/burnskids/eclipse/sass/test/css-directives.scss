@@ -1,0 +1,26 @@
+@import 'foo.css';
+@import "foo" screen;
+@import url(foo);
+@import "rounded-corners", "text-shadow", "magic";
+
+.nested {
+	@import "example";
+}
+
+@media screen and (orientation: landscape) {
+	width: 500px;
+}
+
+@media screen {
+	.sidebar {
+		@media (orientation: landscape) {
+		
+		}
+	}
+}
+
+.seriousError {
+	@extend .error;
+	@extend %hidden;
+	@extend a !optional;
+}

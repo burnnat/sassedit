@@ -1,0 +1,20 @@
+directive	@debug
+number		10em
+operator	+
+number		12em
+structure	;
+
+directive	@debug
+string		"Bazinga!"
+structure	;
+
+directive	@warn
+string		"Assuming width in pixels"
+structure	;
+
+directive	@warn
+function	lighten
+structure	(
+color		blue
+structure	)
+structure	;
