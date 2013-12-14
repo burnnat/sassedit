@@ -38,6 +38,9 @@ public class ParserTest {
 		
 		Scanner expected = new Scanner(getResource(name, EXPECT_EXTENSION));
 		
+		// Allow spaces in tokens
+		expected.useDelimiter("[\t\r\n]+");
+		
 		int i = 0;
 		
 		try {
@@ -67,6 +70,11 @@ public class ParserTest {
 	@Test
 	public void testFunctions() throws IOException {
 		testTokens("functions");
+	}
+
+	@Test
+	public void testSelectors() throws IOException {
+		testTokens("selectors");
 	}
 
 	@Test

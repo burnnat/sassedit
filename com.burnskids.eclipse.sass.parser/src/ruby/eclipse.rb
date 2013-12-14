@@ -27,6 +27,7 @@ require 'sass/tree/debug_node'
 require 'sass/tree/warn_node'
 require 'sass/tree/import_node'
 require 'sass/tree/charset_node'
+require 'sass/selector'
 require 'sass/script'
 require 'sass/scss'
 

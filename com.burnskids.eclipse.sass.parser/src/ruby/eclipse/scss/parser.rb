@@ -59,8 +59,16 @@ module Eclipse
 				tok = super
 				
 				unless tok.nil? or rx == S
+					size = tok.size
+					
+					tok.lstrip!
+					pos = pos + size - tok.size
+					
+					tok.rstrip!
+					size = tok.size
+					
 					Eclipse.log("    (#{pos}) #{tok}")
-					@captures.last << Token.new(pos, tok.size, nil)
+					@captures.last << Token.new(pos, size, nil)
 				end
 				
 				tok
@@ -96,6 +104,10 @@ module Eclipse
 			
 			capture(:function_directive) do |tokens|
 				record(:function, tokens[0])
+			end
+			
+			capture(:selector_sequence) do |tokens|
+				record(:selector, tokens)
 			end
 			
 			capture(:block) do |tokens|

@@ -1,0 +1,27 @@
+selector	div
+structure	{
+structure	}
+
+selector	#unique
+structure	{
+structure	}
+
+selector	.test-class
+structure	{
+structure	}
+
+selector	a:visited
+structure	{
+structure	}
+
+selector	p > span.active
+structure	{
+structure	}
+
+selector	div input[type="button"]
+structure	{
+structure	}
+
+selector	a.homepage:hover, strong.big
+structure	{
+structure	}
