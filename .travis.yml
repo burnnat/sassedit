@@ -5,7 +5,8 @@ after_success:
  - git clone https://burnnat:${GITHUB_TOKEN}@github.com/burnnat/p2.git p2
  - chmod u+x ./p2/stage.sh
  - ./p2/stage.sh com.burnskids.eclipse.sass.p2/target/repository
-after_failure: cat *.test/target/surefire-reports/*.txt
+after_failure:
+ - cat *.test/target/surefire-reports/*.txt
 env:
   global:
    - secure: |-
