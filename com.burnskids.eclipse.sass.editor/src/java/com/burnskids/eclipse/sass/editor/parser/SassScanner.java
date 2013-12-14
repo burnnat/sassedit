@@ -25,7 +25,7 @@ public class SassScanner extends AbstractScriptScanner {
 	
 	static {
 		TOKEN_TYPES.put(ISourceToken.DEFAULT, ISassColorConstants.DEFAULT);
-		TOKEN_TYPES.put(ISourceToken.BLOCK_COMMENT, ISassColorConstants.COMMENT_SINGLE);
+		TOKEN_TYPES.put(ISourceToken.BLOCK_COMMENT, ISassColorConstants.COMMENT_BLOCK);
 		TOKEN_TYPES.put(ISourceToken.SINGLE_COMMENT, ISassColorConstants.COMMENT_SINGLE);
 		TOKEN_TYPES.put(ISourceToken.STRUCTURE, ISassColorConstants.STRUCTURE);
 		TOKEN_TYPES.put(ISourceToken.OPERATOR, ISassColorConstants.OPERATOR);

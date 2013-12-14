@@ -1,7 +1,20 @@
-div.someCls > a:hover {
-	color: silver;
+/* Block comment */
+@mixin fancy-border($width, $elegant: true) {
+	@if $width != null {
+		// Line comment
+		@debug "Full width: #{$width + $base}";
+	}
+}
+
+div.someCls > a {
+	@include fancy-border(2px);
+	
 	font: {
-		face: 'Arial';
+		face: "Arial";
 		weight: bold;
+	}
+	
+	&:hover {
+		color: lighten(silver, 10%) !important;
 	}
 }
