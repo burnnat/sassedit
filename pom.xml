@@ -89,6 +89,7 @@
 			Don't compile JRuby by default, as it takes a long time to do so.
 			If you do want to build with JRuby, use `mvn -P full install`.
 		-->
+		<module>com.burnskids.eclipse.sass.core</module>
 		<module>com.burnskids.eclipse.sass.parser</module>
 		<module>com.burnskids.eclipse.sass.parser.test</module>
 		<module>com.burnskids.eclipse.sass.editor</module>
@@ -101,6 +102,7 @@
 			<id>full</id>
 			<modules>
 				<module>org.jruby.jruby</module>
+				<module>com.burnskids.eclipse.sass.core</module>
 				<module>com.burnskids.eclipse.sass.parser</module>
 				<module>com.burnskids.eclipse.sass.parser.test</module>
 				<module>com.burnskids.eclipse.sass.editor</module>
