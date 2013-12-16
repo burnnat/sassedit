@@ -5,6 +5,7 @@ require 'sass/util'
 require 'sass/engine'
 
 require 'eclipse/capture'
+require 'eclipse/result'
 require 'eclipse/token'
 require 'eclipse/script/const'
 require 'eclipse/script/lexer'

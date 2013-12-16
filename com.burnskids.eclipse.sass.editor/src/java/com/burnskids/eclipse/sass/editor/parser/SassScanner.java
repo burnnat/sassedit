@@ -66,7 +66,7 @@ public class SassScanner extends AbstractScriptScanner {
 		nextIndex = 0;
 		
 		try {
-			tokens.addAll(parser.parse(document.get(offset, length)));
+			tokens.addAll(parser.parse(document.get(offset, length)).getTokens());
 		}
 		catch (BadLocationException e) {
 			e.printStackTrace();

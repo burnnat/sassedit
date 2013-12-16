@@ -34,7 +34,7 @@ public class ParserTest {
 
 	private static void testTokens(String name) throws IOException {
 		String sass = IOUtils.toString(getResource(name, SASS_EXTENSION), "UTF-8");
-		List<ISourceToken> tokens = parser.parse(sass);
+		List<ISourceToken> tokens = parser.parse(sass).getTokens();
 		
 		Scanner expected = new Scanner(getResource(name, EXPECT_EXTENSION));
 		

@@ -30,7 +30,7 @@ module Eclipse
 				
 				tree = super
 				
-				ParseResult.new(tree, capture.output.sort!)
+				Result.new(@scanner.pos, tree, capture.output)
 			end
 			
 			def record(type, pieces)

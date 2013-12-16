@@ -1,6 +1,7 @@
 package com.burnskids.eclipse.sass.parser;
 
 import org.eclipse.core.runtime.Plugin;
+import org.eclipse.core.runtime.Status;
 import org.jruby.embed.PathType;
 import org.jruby.embed.osgi.OSGiScriptingContainer;
 import org.osgi.framework.Bundle;
@@ -19,8 +20,14 @@ public class SassParserPlugin extends Plugin {
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		
+		long start = System.currentTimeMillis();
+		
 		plugin = this;
 		container = new OSGiScriptingContainer(getBundle());
+		
+		long end = System.currentTimeMillis();
+		
+		getLog().log(new Status(Status.INFO, PLUGIN_ID, "JRuby container loaded in " + ((end - start) / 1000.0) + " seconds"));
 	}
 
 	@Override
@@ -40,6 +47,8 @@ public class SassParserPlugin extends Plugin {
 		Bundle bundle = getBundle();
 		Object parser;
 		
+		long start = System.currentTimeMillis();
+		
 		// When running locally, source files haven't been added to the
 		// bundle root, so load directly from the classpath instead.
 		if (bundle.getEntry(PARSER_HOOK) == null) {
@@ -48,6 +57,10 @@ public class SassParserPlugin extends Plugin {
 		else {
 			parser = container.runScriptlet(bundle, PARSER_HOOK);
 		}
+		
+		long end = System.currentTimeMillis();
+		
+		getLog().log(new Status(Status.INFO, PLUGIN_ID, "Sass parser loaded in " + ((end - start) / 1000.0) + " seconds"));
 		
 		return container.getInstance(parser, ISourceTokenParser.class);
 	}
