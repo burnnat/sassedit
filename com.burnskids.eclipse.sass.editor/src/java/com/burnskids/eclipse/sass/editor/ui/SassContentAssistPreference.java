@@ -3,7 +3,7 @@ package com.burnskids.eclipse.sass.editor.ui;
 import org.eclipse.dltk.ui.text.ScriptTextTools;
 import org.eclipse.dltk.ui.text.completion.ContentAssistPreference;
 
-import com.burnskids.eclipse.sass.editor.SassPlugin;
+import com.burnskids.eclipse.sass.editor.SassEditorPlugin;
 
 public class SassContentAssistPreference extends ContentAssistPreference {
 	
@@ -19,6 +19,6 @@ public class SassContentAssistPreference extends ContentAssistPreference {
 	
 	@Override
 	protected ScriptTextTools getTextTools() {
-		return SassPlugin.getDefault().getTextTools();
+		return SassEditorPlugin.getDefault().getTextTools();
 	}
 }

@@ -1,5 +1,7 @@
 module Eclipse
 	module SCSS
+		ParseResult = Struct.new(:tree, :tokens)
+		
 		class Parser < Sass::SCSS::Parser
 			def self.capture(name, &block)
 				define_method(name) do |*args|
@@ -26,9 +28,9 @@ module Eclipse
 				capture = Capture.new
 				@captures = [capture]
 				
-				super
+				tree = super
 				
-				capture.output.sort!
+				ParseResult.new(tree, capture.output.sort!)
 			end
 			
 			def record(type, pieces)

@@ -4,7 +4,8 @@ import org.eclipse.dltk.core.IDLTKLanguageToolkit;
 import org.eclipse.dltk.ui.AbstractDLTKUILanguageToolkit;
 import org.eclipse.jface.preference.IPreferenceStore;
 
-import com.burnskids.eclipse.sass.editor.SassPlugin;
+import com.burnskids.eclipse.sass.core.SassLanguageToolkit;
+import com.burnskids.eclipse.sass.editor.SassEditorPlugin;
 
 public class SassUILanguageToolkit extends AbstractDLTKUILanguageToolkit {
 
@@ -15,6 +16,6 @@ public class SassUILanguageToolkit extends AbstractDLTKUILanguageToolkit {
 
 	@Override
 	public IPreferenceStore getPreferenceStore() {
-		return SassPlugin.getDefault().getPreferenceStore();
+		return SassEditorPlugin.getDefault().getPreferenceStore();
 	}
 }

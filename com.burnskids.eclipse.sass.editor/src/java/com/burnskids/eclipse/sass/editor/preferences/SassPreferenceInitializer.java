@@ -8,14 +8,14 @@ import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.graphics.RGB;
 import org.eclipse.ui.editors.text.EditorsUI;
 
-import com.burnskids.eclipse.sass.editor.SassPlugin;
+import com.burnskids.eclipse.sass.editor.SassEditorPlugin;
 import com.burnskids.eclipse.sass.editor.ui.ISassColorConstants;
 
 public class SassPreferenceInitializer extends AbstractPreferenceInitializer {
 
 	@Override
 	public void initializeDefaultPreferences() {
-		IPreferenceStore store = SassPlugin.getDefault().getPreferenceStore();
+		IPreferenceStore store = SassEditorPlugin.getDefault().getPreferenceStore();
  
 		EditorsUI.useAnnotationsPreferencePage(store);
 		EditorsUI.useQuickDiffPreferencePage(store);

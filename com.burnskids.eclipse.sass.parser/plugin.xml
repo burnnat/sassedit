@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.dltk.core.sourceParsers">
+      <parserContribution
+            natureId="com.burnskids.eclipse.sass.nature">
+         <parser
+               class="com.burnskids.eclipse.sass.parser.SassSourceParserFactory"
+               description="Sass Source Parser Factory"
+               id="com.burnskids.eclipse.sass.parser"
+               name="Sass Parser"
+               priority="0">
+         </parser>
+      </parserContribution>
+   </extension>
+   <extension
+         point="org.eclipse.dltk.core.sourceElementParsers">
+      <parser
+            class="com.burnskids.eclipse.sass.parser.SassSourceElementParser"
+            nature="com.burnskids.eclipse.sass.nature"
+            priority="0">
+      </parser>
+   </extension>
+   <extension
+         point="org.eclipse.dltk.core.buildParticipant">
+      <buildParticipant
+         class="org.eclipse.dltk.core.builder.ParserBuildParticipantFactory"
+         id="com.burnskids.eclipse.sass.parser"
+         name="Sass parser"
+         nature="com.burnskids.eclipse.sass.nature">
+      </buildParticipant>
+   </extension>
+</plugin>

@@ -36,7 +36,7 @@ public class SassParserPlugin extends Plugin {
 		return plugin;
 	}
 
-	public ISourceParser getParser() {
+	public ISourceTokenParser getParser() {
 		Bundle bundle = getBundle();
 		Object parser;
 		
@@ -49,6 +49,6 @@ public class SassParserPlugin extends Plugin {
 			parser = container.runScriptlet(bundle, PARSER_HOOK);
 		}
 		
-		return container.getInstance(parser, ISourceParser.class);
+		return container.getInstance(parser, ISourceTokenParser.class);
 	}
 }

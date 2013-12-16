@@ -1,11 +1,13 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: SASS Parser
-Bundle-SymbolicName: com.burnskids.eclipse.sass.parser
+Bundle-SymbolicName: com.burnskids.eclipse.sass.parser;singleton:=true
 Bundle-Version: 0.0.1.qualifier
 Bundle-Activator: com.burnskids.eclipse.sass.parser.SassParserPlugin
 Require-Bundle: org.eclipse.core.runtime,
- org.jruby.jruby
+ org.eclipse.dltk.core,
+ org.jruby.jruby,
+ com.burnskids.eclipse.sass.core;bundle-version="0.0.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Export-Package: com.burnskids.eclipse.sass.parser

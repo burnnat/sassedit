@@ -15,7 +15,7 @@ import org.eclipse.jface.text.rules.IToken;
 import org.eclipse.jface.text.rules.Token;
 
 import com.burnskids.eclipse.sass.editor.ui.ISassColorConstants;
-import com.burnskids.eclipse.sass.parser.ISourceParser;
+import com.burnskids.eclipse.sass.parser.ISourceTokenParser;
 import com.burnskids.eclipse.sass.parser.ISourceToken;
 import com.burnskids.eclipse.sass.parser.SassParserPlugin;
 
@@ -45,7 +45,7 @@ public class SassScanner extends AbstractScriptScanner {
 	}
 
 	private IDocument document;
-	private ISourceParser parser;
+	private ISourceTokenParser parser;
 	
 	private List<ISourceToken> tokens;
 	private ISourceToken currentToken;

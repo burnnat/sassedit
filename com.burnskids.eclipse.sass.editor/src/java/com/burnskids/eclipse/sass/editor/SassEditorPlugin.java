@@ -8,20 +8,20 @@ import com.burnskids.eclipse.sass.editor.ui.SassTextTools;
 /**
  * The activator class controls the plug-in life cycle
  */
-public class SassPlugin extends AbstractUIPlugin {
+public class SassEditorPlugin extends AbstractUIPlugin {
 
 	// The plug-in ID
-	public static final String PLUGIN_ID = "com.burnskids.eclipse.sass";
+	public static final String PLUGIN_ID = "com.burnskids.eclipse.sass.editor";
 
 	// The shared instance
-	private static SassPlugin plugin;
+	private static SassEditorPlugin plugin;
 	
 	private SassTextTools textTools;
 	
 	/**
 	 * The constructor
 	 */
-	public SassPlugin() {
+	public SassEditorPlugin() {
 		
 	}
 
@@ -48,7 +48,7 @@ public class SassPlugin extends AbstractUIPlugin {
 	 *
 	 * @return the shared instance
 	 */
-	public static SassPlugin getDefault() {
+	public static SassEditorPlugin getDefault() {
 		return plugin;
 	}
 	

@@ -7,7 +7,7 @@ import org.eclipse.dltk.ui.preferences.PreferenceKey;
 import org.eclipse.dltk.ui.util.IStatusChangeListener;
 import org.eclipse.ui.preferences.IWorkbenchPreferenceContainer;
 
-import com.burnskids.eclipse.sass.editor.SassPlugin;
+import com.burnskids.eclipse.sass.editor.SassEditorPlugin;
 
 public class SassGlobalPreferencesPage extends AbstractConfigurationBlockPropertyAndPreferencePage {
 	
@@ -40,7 +40,7 @@ public class SassGlobalPreferencesPage extends AbstractConfigurationBlockPropert
 
 	@Override
 	protected void setPreferenceStore() {
-		setPreferenceStore(SassPlugin.getDefault().getPreferenceStore());
+		setPreferenceStore(SassEditorPlugin.getDefault().getPreferenceStore());
 	}
 
 	@Override

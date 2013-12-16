@@ -5,8 +5,8 @@ import org.eclipse.dltk.internal.ui.editor.ScriptEditor;
 import org.eclipse.dltk.ui.text.ScriptTextTools;
 import org.eclipse.jface.preference.IPreferenceStore;
 
-import com.burnskids.eclipse.sass.editor.SassPlugin;
-import com.burnskids.eclipse.sass.editor.core.SassLanguageToolkit;
+import com.burnskids.eclipse.sass.core.SassLanguageToolkit;
+import com.burnskids.eclipse.sass.editor.SassEditorPlugin;
 
 public class SassEditor extends ScriptEditor {
 	
@@ -26,7 +26,7 @@ public class SassEditor extends ScriptEditor {
 	
 	@Override
 	public IPreferenceStore getScriptPreferenceStore() {
-		return SassPlugin.getDefault().getPreferenceStore();
+		return SassEditorPlugin.getDefault().getPreferenceStore();
 	}
 
 	@Override
@@ -36,6 +36,6 @@ public class SassEditor extends ScriptEditor {
 	
 	@Override
 	public ScriptTextTools getTextTools() {
-		return SassPlugin.getDefault().getTextTools();
+		return SassEditorPlugin.getDefault().getTextTools();
 	}
 }

@@ -4,13 +4,13 @@ import org.eclipse.dltk.ui.preferences.AbstractConfigurationBlockPreferencePage;
 import org.eclipse.dltk.ui.preferences.IPreferenceConfigurationBlock;
 import org.eclipse.dltk.ui.preferences.OverlayPreferenceStore;
 
-import com.burnskids.eclipse.sass.editor.SassPlugin;
+import com.burnskids.eclipse.sass.editor.SassEditorPlugin;
 
 public class SassEditorSyntaxColoringPreferencesPage extends AbstractConfigurationBlockPreferencePage {
 
 	@Override
 	protected void setPreferenceStore() {
-		setPreferenceStore(SassPlugin.getDefault().getPreferenceStore());
+		setPreferenceStore(SassEditorPlugin.getDefault().getPreferenceStore());
 	}
 
 	@Override

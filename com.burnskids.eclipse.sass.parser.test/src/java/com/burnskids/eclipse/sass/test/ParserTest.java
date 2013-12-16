@@ -11,7 +11,7 @@ import org.apache.commons.io.IOUtils;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.burnskids.eclipse.sass.parser.ISourceParser;
+import com.burnskids.eclipse.sass.parser.ISourceTokenParser;
 import com.burnskids.eclipse.sass.parser.ISourceToken;
 import com.burnskids.eclipse.sass.parser.SassParserPlugin;
 
@@ -20,7 +20,7 @@ public class ParserTest {
 	private static final String SASS_EXTENSION = "scss";
 	private static final String EXPECT_EXTENSION = "txt";
 
-	private static ISourceParser parser;
+	private static ISourceTokenParser parser;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {

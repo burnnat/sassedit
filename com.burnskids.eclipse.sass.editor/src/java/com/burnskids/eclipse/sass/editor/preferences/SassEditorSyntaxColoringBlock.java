@@ -17,7 +17,7 @@ import org.eclipse.jface.text.source.projection.ProjectionViewer;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.texteditor.ITextEditor;
 
-import com.burnskids.eclipse.sass.editor.SassPlugin;
+import com.burnskids.eclipse.sass.editor.SassEditorPlugin;
 import com.burnskids.eclipse.sass.editor.ui.ISassColorConstants;
 import com.burnskids.eclipse.sass.editor.ui.SassSourceViewerConfiguration;
 
@@ -81,7 +81,7 @@ public class SassEditorSyntaxColoringBlock
 	
 	@Override
 	protected ScriptTextTools getTextTools() {
-		return SassPlugin.getDefault().getTextTools();
+		return SassEditorPlugin.getDefault().getTextTools();
 	}
 
 	@Override
