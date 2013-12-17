@@ -54,12 +54,19 @@ public class SassScanner extends AbstractScriptScanner {
 	public SassScanner(IColorManager manager, IPreferenceStore store) {
 		super(manager, store);
 		this.initialize();
-		
-		parser = SassParserPlugin.getDefault().getParser();
 	}
 
 	@Override
 	public void setRange(IDocument document, int offset, int length) {
+		if (parser == null) {
+			try {
+				parser = SassParserPlugin.getDefault().getParser();
+			}
+			catch (InterruptedException e) {
+				return;
+			}
+		}
+		
 		this.document = document;
 		
 		tokens = new ArrayList<ISourceToken>();
